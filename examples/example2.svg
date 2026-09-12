@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <rect width="1600" height="1050" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#202020"/>
+    </marker>
+    <style>
+      text{font-family:'Noto Sans CJK SC','Source Han Sans SC','Microsoft YaHei',sans-serif;fill:#171717}
+      .region{fill:#ffffff;stroke:#303030;stroke-width:2.2}
+      .panel{fill:#f7f7f7;stroke:#555555;stroke-width:2}
+      .node{fill:#ffffff;stroke:#222222;stroke-width:2.2}
+      .shade{fill:#ededed}
+      .region-title{font-size:25px;font-weight:700}
+      .node-title{font-size:23px;font-weight:700}
+      .small{font-size:19px}
+      .tiny{font-size:17px}
+      .edge{fill:none;stroke:#202020;stroke-width:2.7;marker-end:url(#arrow)}
+      .feedback{fill:none;stroke:#555555;stroke-width:2.5;stroke-dasharray:10 8;marker-end:url(#arrow)}
+      .edge-label{font-size:18px;fill:#303030}
+      .divider{stroke:#888888;stroke-width:1.4}
+      .decision{fill:#f2f2f2;stroke:#202020;stroke-width:2.2}
+    </style>
+  </defs>
+
+  <rect class="region" x="40" y="50" width="350" height="850"/>
+  <text class="region-title" x="65" y="92">序列输入域 100</text>
+  <rect class="panel" x="80" y="140" width="270" height="410"/>
+  <text class="node-title" x="105" y="190">110 连续输入序列</text>
+  <text class="small" x="105" y="222">待编码的局部数据窗口</text>
+  <line class="divider" x1="100" y1="248" x2="330" y2="248"/>
+  <text class="node-title" x="105" y="296">120 运行配置元数据</text>
+  <text class="small" x="105" y="328">采样频率、数据维度与量纲</text>
+  <line class="divider" x1="100" y1="354" x2="330" y2="354"/>
+  <text class="node-title" x="105" y="402">130 状态与历史信息</text>
+  <text class="small" x="105" y="434">当前状态与输入上下文</text>
+  <text class="small" x="105" y="464">处理模块的候选输出</text>
+  <text class="tiny" x="105" y="515">同一窗口保持参数A和维度索引</text>
+  <path class="edge" d="M215 550 V680"/>
+  <rect class="node shade" x="105" y="680" width="220" height="90"/>
+  <text class="node-title" x="215" y="719" text-anchor="middle">序列输入接口</text>
+  <text class="small" x="215" y="750" text-anchor="middle">140</text>
+
+  <rect class="region" x="420" y="50" width="710" height="850"/>
+  <text class="region-title" x="445" y="92">编码与证据域 200</text>
+  <path class="edge" d="M325 725 H405 V180 H460"/>
+  <text class="edge-label" x="330" y="710">数据窗口与配置参数</text>
+  <rect class="node shade" x="460" y="130" width="220" height="100"/>
+  <text class="node-title" x="570" y="171" text-anchor="middle">XX编码器 210</text>
+  <text class="small" x="570" y="204" text-anchor="middle">生成离散编码序列</text>
+  <path class="edge" d="M680 180 H760"/>
+  <rect class="node" x="760" y="130" width="300" height="100"/>
+  <text class="node-title" x="910" y="171" text-anchor="middle">编码标识与编码跨度 220</text>
+  <text class="small" x="910" y="204" text-anchor="middle">保持连续输入区间对应</text>
+  <path class="edge" d="M910 230 V280"/>
+  <rect class="node" x="760" y="280" width="300" height="80"/>
+  <text class="node-title" x="910" y="314" text-anchor="middle">逆变换重构对象 230</text>
+  <text class="small" x="910" y="343" text-anchor="middle">用于窗口级差异比较</text>
+
+  <path class="edge" d="M760 205 H700 V380 H620 V400"/>
+  <path class="edge" d="M1000 360 V400"/>
+  <rect class="node" x="460" y="400" width="600" height="260"/>
+  <text class="node-title" x="760" y="440" text-anchor="middle">窗口级XX证据计算</text>
+  <line class="divider" x1="490" y1="465" x2="1030" y2="465"/>
+  <text class="small" x="500" y="505">240 边界分值</text>
+  <text class="small" x="785" y="505">250 重构差异谱</text>
+  <text class="small" x="500" y="555">260 相邻编码反事实差</text>
+  <text class="small" x="785" y="555">270 扰动变化率</text>
+  <text class="small" x="500" y="605">280 前向输出信号</text>
+  <text class="tiny" x="785" y="605">各证据绑定编码窗口和输入维度</text>
+  <path class="edge" d="M620 660 V710"/>
+  <rect class="node shade" x="510" y="710" width="220" height="90"/>
+  <text class="node-title" x="620" y="749" text-anchor="middle">XX证据接口</text>
+  <text class="small" x="620" y="780" text-anchor="middle">285</text>
+  <path class="edge" d="M730 755 H810"/>
+  <rect class="node shade" x="810" y="710" width="270" height="90"/>
+  <text class="node-title" x="945" y="749" text-anchor="middle">XX风险计算器 290</text>
+  <text class="small" x="945" y="780" text-anchor="middle">输出窗口级风险分值</text>
+
+  <rect class="region" x="1160" y="50" width="400" height="850"/>
+  <text class="region-title" x="1185" y="92">守卫动作域 300</text>
+  <path class="edge" d="M1080 755 H1125 V250 H1260"/>
+  <text class="edge-label" x="1090" y="738">窗口级风险</text>
+  <polygon class="decision" points="1360,170 1460,250 1360,330 1260,250"/>
+  <text class="node-title" x="1360" y="238" text-anchor="middle">高风险窗口？</text>
+  <text class="small" x="1360" y="270" text-anchor="middle">310</text>
+
+  <path class="edge" d="M1360 330 V420"/>
+  <text class="edge-label" x="1378" y="380">是</text>
+  <rect class="node shade" x="1185" y="420" width="335" height="180"/>
+  <text class="node-title" x="1352" y="461" text-anchor="middle">守卫修复动作</text>
+  <line class="divider" x1="1210" y1="486" x2="1495" y2="486"/>
+  <text class="small" x="1215" y="525">320 局部重编码</text>
+  <text class="small" x="1380" y="525">330 备用输出回退</text>
+  <text class="small" x="1215" y="566">340 受限采样</text>
+  <text class="tiny" x="1380" y="566">按风险等级选择</text>
+  <path class="edge" d="M1352 600 V680"/>
+  <rect class="node" x="1185" y="680" width="335" height="100"/>
+  <text class="node-title" x="1352" y="722" text-anchor="middle">守卫后输出 350</text>
+  <text class="small" x="1352" y="755" text-anchor="middle">重构对象或备用输出候选</text>
+
+  <path class="edge" d="M1460 250 H1535 V730 H1520"/>
+  <text class="edge-label" x="1474" y="235">否：直接输出</text>
+  <path class="edge" d="M1352 780 V820"/>
+  <rect class="node shade" x="1185" y="820" width="335" height="70"/>
+  <text class="node-title" x="1352" y="852" text-anchor="middle">XX证据审计日志 360</text>
+  <text class="tiny" x="1352" y="878" text-anchor="middle">风险、窗口、变化与回退动作</text>
+
+  <path class="feedback" d="M1185 510 H1145 V930 H20 V110 H570 V130"/>
+  <text class="edge-label" x="690" y="920">局部重编码 320 返回编码器</text>
+  <text x="800" y="1010" text-anchor="middle" font-size="26px">图1</text>
+</svg>

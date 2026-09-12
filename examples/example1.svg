@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#000000"/>
+    </marker>
+    <style>
+      text { font-family: "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #000000; }
+      .region { fill: #fafafa; stroke: #555555; stroke-width: 2.2; }
+      .node { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+      .decision { fill: #f2f2f2; stroke: #000000; stroke-width: 2.2; }
+      .port { fill: #ffffff; stroke: #000000; stroke-width: 2; }
+      .edge { fill: none; stroke: #000000; stroke-width: 2.2; marker-end: url(#arrow); }
+      .control { fill: none; stroke: #555555; stroke-width: 2; stroke-dasharray: 9 7; marker-end: url(#arrow); }
+      .bus { fill: none; stroke: #555555; stroke-width: 2.2; }
+      .region-title { font-size: 24px; font-weight: 700; }
+      .node-title { font-size: 21px; font-weight: 700; }
+      .body { font-size: 17px; }
+      .small { font-size: 15px; }
+      .edge-label { font-size: 16px; font-weight: 600; }
+      .figure-no { font-size: 22px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1050" fill="#ffffff"/>
+
+  <rect x="40" y="85" width="320" height="825" rx="8" class="region"/>
+  <text x="60" y="125" class="region-title">输入数据域 100</text>
+
+  <rect x="70" y="155" width="240" height="92" rx="5" class="node"/>
+  <text x="190" y="185" text-anchor="middle" class="node-title">数据接收模块 110</text>
+  <text x="190" y="214" text-anchor="middle" class="body">参数A、参数B、状态X</text>
+
+  <rect x="70" y="275" width="240" height="92" rx="5" class="node"/>
+  <text x="190" y="305" text-anchor="middle" class="node-title">属性与置信信息 120</text>
+  <text x="190" y="334" text-anchor="middle" class="body">属性A、范围B、区间X</text>
+
+  <rect x="70" y="395" width="240" height="92" rx="5" class="node"/>
+  <text x="190" y="425" text-anchor="middle" class="node-title">基准信息 130</text>
+  <text x="190" y="454" text-anchor="middle" class="body">版本X、时间T、基准标识</text>
+
+  <rect x="70" y="515" width="240" height="92" rx="5" class="node"/>
+  <text x="190" y="545" text-anchor="middle" class="node-title">对象与来源信息 140</text>
+  <text x="190" y="574" text-anchor="middle" class="body">对象A、来源B、批次C</text>
+
+  <rect x="70" y="635" width="240" height="112" rx="5" class="node"/>
+  <text x="190" y="665" text-anchor="middle" class="node-title">处理目标 150</text>
+  <text x="190" y="694" text-anchor="middle" class="body">目标A、目标B</text>
+  <text x="190" y="720" text-anchor="middle" class="body">或后续动作X</text>
+
+  <path d="M310 201 H335 M310 321 H335 M310 441 H335 M310 561 H335 M310 691 H335 M335 201 V691" class="bus"/>
+  <text x="326" y="785" text-anchor="end" class="edge-label">输入字段总线</text>
+  <path d="M335 516 H365" class="edge"/>
+
+  <rect x="365" y="466" width="70" height="100" rx="5" class="node"/>
+  <text x="400" y="500" text-anchor="middle" class="node-title">字段</text>
+  <text x="400" y="527" text-anchor="middle" class="node-title">接口</text>
+  <text x="400" y="553" text-anchor="middle" class="body">160</text>
+
+  <rect x="440" y="85" width="650" height="825" rx="8" class="region"/>
+  <text x="462" y="125" class="region-title">证据与评估处理域 200</text>
+
+  <rect x="475" y="165" width="240" height="112" rx="5" class="node"/>
+  <text x="595" y="196" text-anchor="middle" class="node-title">字段规范化模块 210</text>
+  <text x="595" y="225" text-anchor="middle" class="body">格式统一、字段完整性检查</text>
+  <text x="595" y="250" text-anchor="middle" class="body">对象与基准信息关联</text>
+
+  <rect x="815" y="165" width="240" height="112" rx="5" class="node"/>
+  <text x="935" y="196" text-anchor="middle" class="node-title">XX证据绑定模块 220</text>
+  <text x="935" y="225" text-anchor="middle" class="body">绑定字段A、属性B、基准X</text>
+  <text x="935" y="250" text-anchor="middle" class="body">对象C、来源D与置信信息</text>
+
+  <rect x="815" y="355" width="240" height="112" rx="5" class="node"/>
+  <text x="935" y="386" text-anchor="middle" class="node-title">XX证据账本 230</text>
+  <text x="935" y="415" text-anchor="middle" class="body">摘要值、字段版本</text>
+  <text x="935" y="440" text-anchor="middle" class="body">缺失项与追溯索引</text>
+
+  <rect x="475" y="550" width="240" height="112" rx="5" class="node"/>
+  <text x="595" y="581" text-anchor="middle" class="node-title">参数扰动模块 240</text>
+  <text x="595" y="610" text-anchor="middle" class="body">参数变换、基准版本变体</text>
+  <text x="595" y="635" text-anchor="middle" class="body">对象错配与置信信息变体</text>
+
+  <rect x="815" y="550" width="240" height="112" rx="5" class="node"/>
+  <text x="935" y="581" text-anchor="middle" class="node-title">下游一致性复算 250</text>
+  <text x="935" y="610" text-anchor="middle" class="body">原始对象与扰动对象分别运行</text>
+  <text x="935" y="635" text-anchor="middle" class="body">比较输出A、动作B与分值变化</text>
+
+  <rect x="645" y="740" width="240" height="112" rx="5" class="node"/>
+  <text x="765" y="771" text-anchor="middle" class="node-title">XX证据汇总 260</text>
+  <text x="765" y="800" text-anchor="middle" class="body">字段缺口、输出变化</text>
+  <text x="765" y="825" text-anchor="middle" class="body">修复路径与隔离依据</text>
+
+  <path d="M435 516 H455 V221 H475" class="edge"/>
+  <path d="M715 221 H815" class="edge"/>
+  <text x="765" y="207" text-anchor="middle" class="edge-label">关联字段</text>
+  <path d="M935 277 V355" class="edge"/>
+  <text x="948" y="321" class="edge-label">写入</text>
+  <path d="M935 165 V145 H1125 V940 H450 V606 H475" class="control"/>
+  <text x="835" y="928" text-anchor="middle" class="edge-label">按证据生成扰动参数</text>
+  <path d="M715 606 H815" class="edge"/>
+  <text x="765" y="592" text-anchor="middle" class="edge-label">扰动对象</text>
+  <path d="M1055 411 H1095 V920 H765 V852" class="edge"/>
+  <text x="805" y="686" class="edge-label">完整性证据</text>
+  <path d="M935 662 V710 H840 V740" class="edge"/>
+  <text x="955" y="686" class="edge-label">变化证据</text>
+
+  <circle cx="1090" cy="796" r="10" class="port"/>
+  <text x="1005" y="828" class="small">判定接口 270</text>
+  <path d="M885 796 H1080" class="edge"/>
+
+  <rect x="1130" y="85" width="430" height="825" rx="8" class="region"/>
+  <text x="1152" y="125" class="region-title">门控动作域 300</text>
+  <circle cx="1130" cy="221" r="10" class="port"/>
+  <path d="M1100 796 H1110 V221 H1120" class="edge"/>
+  <text x="1098" y="505" text-anchor="end" class="edge-label">XX证据与评估结果</text>
+  <path d="M1140 221 H1200" class="edge"/>
+
+  <polygon points="1345,140 1490,221 1345,302 1200,221" class="decision"/>
+  <text x="1345" y="204" text-anchor="middle" class="node-title">证据完整且</text>
+  <text x="1345" y="231" text-anchor="middle" class="node-title">变化可接受？</text>
+  <text x="1345" y="258" text-anchor="middle" class="body">310</text>
+
+  <rect x="1260" y="340" width="170" height="72" rx="5" class="node"/>
+  <text x="1345" y="370" text-anchor="middle" class="node-title">处置路由 315</text>
+  <text x="1345" y="396" text-anchor="middle" class="small">按缺口类型分派</text>
+  <path d="M1345 302 V340" class="edge"/>
+
+  <rect x="1170" y="480" width="165" height="100" rx="5" class="node"/>
+  <text x="1252" y="514" text-anchor="middle" class="node-title">允许输出 320</text>
+  <text x="1252" y="544" text-anchor="middle" class="body">结果稳定且证据完整</text>
+
+  <rect x="1375" y="480" width="165" height="100" rx="5" class="node"/>
+  <text x="1457" y="514" text-anchor="middle" class="node-title">参数修复 330</text>
+  <text x="1457" y="544" text-anchor="middle" class="body">参数可确定性修复</text>
+
+  <rect x="1170" y="640" width="165" height="100" rx="5" class="node"/>
+  <text x="1252" y="674" text-anchor="middle" class="node-title">补充/确认 340</text>
+  <text x="1252" y="704" text-anchor="middle" class="body">对象或基准信息存疑</text>
+
+  <rect x="1375" y="640" width="165" height="100" rx="5" class="node"/>
+  <text x="1457" y="674" text-anchor="middle" class="node-title">隔离结果 350</text>
+  <text x="1457" y="704" text-anchor="middle" class="body">高风险且不可修复</text>
+
+  <path d="M1252 445 H1457 M1345 445 V610 M1252 610 H1457" class="bus"/>
+  <text x="1180" y="461" class="small">稳定</text>
+  <text x="1460" y="461" class="small">可修复</text>
+  <text x="1180" y="626" class="small">需核验</text>
+  <text x="1460" y="626" class="small">不可修复</text>
+  <path d="M1345 412 V445" class="edge"/>
+  <path d="M1252 445 V480" class="edge"/>
+  <path d="M1457 445 V480" class="edge"/>
+  <path d="M1252 610 V640" class="edge"/>
+  <path d="M1457 610 V640" class="edge"/>
+
+  <rect x="1260" y="800" width="190" height="72" rx="5" class="node"/>
+  <text x="1355" y="830" text-anchor="middle" class="node-title">XX证据报告 360</text>
+  <text x="1355" y="856" text-anchor="middle" class="small">动作、原因、修复与索引</text>
+  <path d="M1252 580 V600 H1145 V770 M1252 740 V770 M1457 580 V600 H1550 V770 M1457 740 V770 M1145 770 H1550" class="bus"/>
+  <path d="M1355 770 V800" class="edge"/>
+
+  <text x="800" y="1017" text-anchor="middle" class="figure-no">图1</text>
+</svg>

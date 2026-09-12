@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.DS_Store
+
+# Keep private or uncleared examples out of the public repository.
+examples/private/
+workbench/
+
+# Do not accidentally commit source papers, extracted text, review boards, or secrets.
+*.pdf
+*.env
+.env.*
+*.key
+*.pem
+*.p12
+patent-figures/review/
+patent-figures/extracted/

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Patent Figure Redraw"
+  short_description: "Turn topics or papers into editable patent figures"
+  default_prompt: "Use $patent-figure-redraw to convert the given topics or paper PDFs into editable SVG and review-ready PNG patent figures."
