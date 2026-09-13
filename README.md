@@ -15,17 +15,9 @@
 
 以下示例仅展示版式与绘图流程，不涉及敏感/隐私或者实际专利附图。
 
-### 示例1
-
-![示例1](examples/example1.png)
+![示例](examples/example1.png)
 
 [查看可编辑 SVG](examples/example1.svg)
-
-### 示例2
-
-![示例2](examples/example2.png)
-
-[查看可编辑 SVG](examples/example2.svg)
 
 ## 使用
 
